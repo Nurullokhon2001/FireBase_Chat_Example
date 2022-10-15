@@ -12,6 +12,8 @@ abstract class BaseFragment<VB : ViewBinding>(
 ) : Fragment() {
     private var _binding: VB? = null
 
+    val ctx by lazy { requireContext() }
+
     val binding: VB get() = checkNotNull(_binding)
 
     override fun onCreateView(

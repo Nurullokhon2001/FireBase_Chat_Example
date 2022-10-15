@@ -12,12 +12,11 @@
         tools:layout="@layout/fragment_authorization">
         <action
             android:id="@+id/action_authorizationFragment_to_registrationFragment"
-            app:destination="@id/registrationFragment"
-            app:popUpTo="@id/authorizationFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/registrationFragment" />
         <action
             android:id="@+id/action_authorizationFragment_to_chatListFragment"
             app:destination="@id/chatListFragment"
+            app:launchSingleTop="true"
             app:popUpTo="@id/authorizationFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -33,9 +32,7 @@
         tools:layout="@layout/fragment_registration">
         <action
             android:id="@+id/action_registrationFragment_to_authorizationFragment"
-            app:destination="@id/authorizationFragment"
-            app:popUpTo="@id/registrationFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/authorizationFragment" />
         <action
             android:id="@+id/action_registrationFragment_to_chatListFragment"
             app:destination="@id/chatListFragment"
