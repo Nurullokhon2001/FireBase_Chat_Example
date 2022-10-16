@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.firebase_chat_example.domain.use_case.GetUserUseCase
-import com.example.firebase_chat_example.domain.use_case.LogoutUseCase
+import com.example.firebase_chat_example.domain.auth_use_case.GetUserUseCase
+import com.example.firebase_chat_example.domain.auth_use_case.LogoutUseCase
 import com.example.firebase_chat_example.utils.Resource
 import com.google.firebase.auth.FirebaseUser
 import dagger.hilt.android.lifecycle.HiltViewModel

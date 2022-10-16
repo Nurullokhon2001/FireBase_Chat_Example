@@ -1,4 +1,4 @@
-package com.example.firebase_chat_example.domain.use_case
+package com.example.firebase_chat_example.domain.auth_use_case
 
 import com.example.firebase_chat_example.domain.AuthRepository
 import com.example.firebase_chat_example.utils.Resource

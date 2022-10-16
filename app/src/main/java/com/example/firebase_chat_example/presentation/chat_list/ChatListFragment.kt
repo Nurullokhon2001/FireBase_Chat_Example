@@ -27,10 +27,6 @@ class ChatListFragment : BaseFragment<FragmentChatListBinding>(FragmentChatListB
         val menuHost: MenuHost = requireActivity()
         viewModel.user.observe(viewLifecycleOwner) { setResult(it) }
         viewModel.getUser()
-        binding.tv.setOnClickListener {
-            viewModel.logout()
-            findNavController().navigate(R.id.action_chatListFragment_to_registrationFragment)
-        }
 
         menuHost.addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
@@ -40,8 +36,8 @@ class ChatListFragment : BaseFragment<FragmentChatListBinding>(FragmentChatListB
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 when (menuItem.itemId) {
                     R.id.logout_menu -> {
-//                        viewModel.logout()
-                        Toast.makeText(ctx, "hello", Toast.LENGTH_SHORT).show()
+                        viewModel.logout()
+                        findNavController().navigate(R.id.action_chatListFragment_to_registrationFragment)
                     }
                 }
                 return true
