@@ -22,15 +22,15 @@ class RegistrationViewModel @Inject constructor(
     private val _signup = MutableLiveData<Resource<FirebaseUser>>()
     val signup: LiveData<Resource<FirebaseUser>> get() = _signup
 
-    fun signupUser(user:UserModel) = viewModelScope.launch {
+    fun signupUser(user: UserModel) = viewModelScope.launch {
         _signup.value = Resource.Loading
         val result = signUpUseCase.invoke(user)
         _signup.value = result
     }
 
-    fun addUserUseCase( userName: String) {
+    fun addUserUseCase(userModel: UserModel) {
         viewModelScope.launch {
-            addUserUseCase.invoke( userName)
+            addUserUseCase.invoke(userModel)
         }
     }
 }

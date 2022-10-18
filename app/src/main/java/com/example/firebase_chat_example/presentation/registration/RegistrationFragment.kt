@@ -21,9 +21,9 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(
 
     private val user by lazy {
         UserModel(
-            binding.nameEt.text.toString(),
-            binding.loginEt.text.toString(),
-            binding.passwordEt.text.toString()
+            name=  binding.nameEt.text.toString(),
+            email=  binding.loginEt.text.toString(),
+            password= binding.passwordEt.text.toString()
         )
     }
 
@@ -60,7 +60,7 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(
             }
             is Resource.Success -> {
                 Toast.makeText(ctx, "Welcome", Toast.LENGTH_SHORT).show()
-                viewModel.addUserUseCase(user.email)
+                viewModel.addUserUseCase(user)
                 showProgress(false)
                 setEnabled(true)
             }
