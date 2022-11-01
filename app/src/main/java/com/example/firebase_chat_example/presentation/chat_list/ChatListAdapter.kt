@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.firebase_chat_example.databinding.ItemUsersBinding
 import com.example.firebase_chat_example.domain.model.UserModel
 
-class ChatListAdapter : ListAdapter<UserModel, ChatListAdapter.ViewHolder>(
+class ChatListAdapter(
+    private val userOnClickListener: (String) -> Unit
+) : ListAdapter<UserModel, ChatListAdapter.ViewHolder>(
     UserItemDiffCallback()
 ) {
     class ViewHolder(private val binding: ItemUsersBinding) :
@@ -30,6 +32,7 @@ class ChatListAdapter : ListAdapter<UserModel, ChatListAdapter.ViewHolder>(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position))
+        holder.itemView.setOnClickListener { userOnClickListener.invoke(getItem(position).uid) }
     }
 }
 
@@ -39,5 +42,4 @@ class UserItemDiffCallback : DiffUtil.ItemCallback<UserModel>() {
 
     override fun areContentsTheSame(oldItem: UserModel, newItem: UserModel): Boolean =
         oldItem.uid == newItem.uid
-
 }

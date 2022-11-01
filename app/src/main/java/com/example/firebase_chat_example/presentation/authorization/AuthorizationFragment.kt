@@ -42,8 +42,8 @@ class AuthorizationFragment : BaseFragment<FragmentAuthorizationBinding>(
         when (result) {
             is Resource.Failure -> {
                 Toast.makeText(ctx, result.exception.message.toString(), Toast.LENGTH_SHORT).show()
-                showProgress(true)
-                setEnabled(false)
+                showProgress(false)
+                setEnabled(true)
             }
             is Resource.Success -> {
                 findNavController().navigate(R.id.action_authorizationFragment_to_chatListFragment)

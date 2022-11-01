@@ -10,4 +10,5 @@
     <string name="have_an_account_sign_in">Have an account? Sign in</string>
     <string name="name">Name</string>
     <string name="surname">Surname</string>
+    <string name="enter_message">Enter message</string>
 </resources>

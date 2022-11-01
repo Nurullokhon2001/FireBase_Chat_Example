@@ -60,6 +60,7 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(
             }
             is Resource.Success -> {
                 Toast.makeText(ctx, "Welcome", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_registrationFragment_to_chatListFragment)
                 viewModel.addUserUseCase(user)
                 showProgress(false)
                 setEnabled(true)

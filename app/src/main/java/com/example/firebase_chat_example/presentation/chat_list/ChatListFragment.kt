@@ -25,7 +25,10 @@ import dagger.hilt.android.AndroidEntryPoint
 class ChatListFragment : BaseFragment<FragmentChatListBinding>(FragmentChatListBinding::inflate) {
 
     private val viewModel by viewModels<ChatListViewModel>()
-    private val adapter: ChatListAdapter = ChatListAdapter()
+    private val adapter: ChatListAdapter = ChatListAdapter {
+        val action = ChatListFragmentDirections.actionChatListFragmentToChatFragment(it)
+        findNavController().navigate(action)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val menuHost: MenuHost = requireActivity()

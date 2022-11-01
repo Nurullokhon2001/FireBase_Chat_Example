@@ -3,16 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/drawable-v24/button_background.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/drawable-v24/ic_send.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/drawable/item_left_side_background.xml" value="0.177" />
         <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/drawable/item_right_side_background.xml" value="0.177" />
         <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/layout/activity_main.xml" value="0.1274131274131274" />
         <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/layout/chat_list_item.xml" value="0.253125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/layout/fragment_authorization.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/layout/fragment_chat.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/layout/fragment_chat.xml" value="0.176" />
         <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/layout/fragment_chat_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/layout/fragment_registration.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/layout/item_left.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/layout/item_right.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/layout/item_right.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/layout/item_users.xml" value="0.253125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/FireBase_Chat_Example/app/src/main/res/menu/logout.xml" value="0.253125" />
       </map>
