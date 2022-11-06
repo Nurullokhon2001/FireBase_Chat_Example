@@ -31,6 +31,13 @@ class ChatListFragment : BaseFragment<FragmentChatListBinding>(FragmentChatListB
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        arguments?.let {
+            val action =
+                ChatListFragmentDirections.actionChatListFragmentToChatFragment(it.getString("userUuid")!!)
+            findNavController().navigate(action)
+            arguments = null
+
+        }
         val menuHost: MenuHost = requireActivity()
         setToolbar(menuHost)
         viewModel.user.observe(viewLifecycleOwner) { setResult(it) }

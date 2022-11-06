@@ -43,6 +43,7 @@ class ChatFragment : BaseFragment<FragmentChatBinding>({ FragmentChatBinding.inf
                     val chatList = it.result
                     binding.progress.setVisibility(false)
                     adapter.submitList(chatList)
+                    binding.chatRecyclerView.scrollToPosition(1)
                 }
                 is Resource.Failure -> {
                     Toast.makeText(ctx, it.exception.message, Toast.LENGTH_SHORT).show()
@@ -80,6 +81,7 @@ class ChatFragment : BaseFragment<FragmentChatBinding>({ FragmentChatBinding.inf
         when (result) {
             is Resource.Success -> {
                 adapter.setUser(result.result!!)
+                userReceiver = result.result
             }
             is Resource.Failure -> {
                 Toast.makeText(ctx, result.exception.message.toString(), Toast.LENGTH_SHORT).show()

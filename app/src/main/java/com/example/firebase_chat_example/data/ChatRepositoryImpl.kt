@@ -3,6 +3,7 @@ package com.example.firebase_chat_example.data
 import android.util.Log
 import com.example.firebase_chat_example.domain.ChatRepository
 import com.example.firebase_chat_example.domain.model.ChatModel
+import com.example.firebase_chat_example.domain.model.PushNotificationModel
 import com.example.firebase_chat_example.domain.model.UserModel
 import com.example.firebase_chat_example.utils.Resource
 import com.google.firebase.auth.FirebaseAuth
@@ -10,12 +11,16 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.coroutines.tasks.await
+import okhttp3.ResponseBody
+import retrofit2.Response
 import javax.inject.Inject
 
 class ChatRepositoryImpl @Inject constructor(
     private val firebaseAuth: FirebaseAuth,
-    private var databaseReference: FirebaseDatabase
+    private var databaseReference: FirebaseDatabase,
+    private val notificationApi : NotificationApi
 ) : ChatRepository {
     override suspend fun addUser(userModel: UserModel) {
         val hashMap: HashMap<String, String?> = HashMap()
@@ -64,6 +69,10 @@ class ChatRepositoryImpl @Inject constructor(
         }
     }
 
+    override suspend fun sendPushNotification(notification: PushNotificationModel): Response<ResponseBody> {
+       return notificationApi.postNotification(notification)
+    }
+
     override suspend fun getUsers(): Resource<List<UserModel>> {
         try {
             val userList = mutableListOf<UserModel>()
@@ -81,6 +90,7 @@ class ChatRepositoryImpl @Inject constructor(
                     )
                 }
             }
+            FirebaseMessaging.getInstance().subscribeToTopic("/topics/${firebaseAuth.currentUser!!.uid}")
             return Resource.Success(userList)
         } catch (e: Exception) {
             return Resource.Failure(e)

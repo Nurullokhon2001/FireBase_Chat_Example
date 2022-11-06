@@ -1,13 +1,12 @@
 package com.example.firebase_chat_example.data
 
-import com.example.firebase_chat_example.utils.Resource
 import com.example.firebase_chat_example.domain.AuthRepository
 import com.example.firebase_chat_example.domain.model.UserModel
+import com.example.firebase_chat_example.utils.Resource
 import com.example.firebase_chat_example.utils.await
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.UserProfileChangeRequest
-import java.lang.Exception
 import javax.inject.Inject
 
 class AuthRepositoryImpl @Inject constructor(
