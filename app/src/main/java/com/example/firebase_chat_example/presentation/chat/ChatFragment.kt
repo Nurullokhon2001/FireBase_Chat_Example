@@ -43,7 +43,7 @@ class ChatFragment : BaseFragment<FragmentChatBinding>({ FragmentChatBinding.inf
                     val chatList = it.result
                     binding.progress.setVisibility(false)
                     adapter.submitList(chatList)
-                    binding.chatRecyclerView.scrollToPosition(1)
+                    binding.chatRecyclerView.scrollToPosition(chatList.size-1)
                 }
                 is Resource.Failure -> {
                     Toast.makeText(ctx, it.exception.message, Toast.LENGTH_SHORT).show()
@@ -63,6 +63,7 @@ class ChatFragment : BaseFragment<FragmentChatBinding>({ FragmentChatBinding.inf
 
         binding.btnSendMessage.setOnClickListener {
             viewModel.sendMessage(createChatModel())
+            viewModel.readMessage(args.userUuid)
             binding.etMessage.setText("")
         }
         binding.chatRecyclerView.adapter = adapter
